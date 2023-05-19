@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 void main(List<String> args) {
-  runApp(MaterialApp(home: MyApp()));
+  runApp(const MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
                   maxHeight: 50,
                   child: Container(
                     color: Colors.pink,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Sliver Header",
                         style: TextStyle(
@@ -42,13 +42,13 @@ class _MyAppState extends State<MyApp> {
                 delegate: SliverChildListDelegate(List.generate(
                     26,
                     (index) => Container(
-                          padding: EdgeInsets.all(15),
+                          padding: const EdgeInsets.all(15),
                           color: Color((math.Random().nextDouble() * 0xFFFFFF)
                                   .toInt())
                               .withOpacity(1.0),
                           child: Text(
                             "Container number $index",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w500,
                                 fontSize: 20,
@@ -78,7 +78,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return new SizedBox.expand(child: child);
+    return SizedBox.expand(child: child);
   }
 
   @override
