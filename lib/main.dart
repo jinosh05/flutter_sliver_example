@@ -9,10 +9,10 @@ class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +23,8 @@ class _MyAppState extends State<MyApp> {
               floating: true,
               pinned: true,
               delegate: _SliverAppBarDelegate(
-                  minHeight: 30,
-                  maxHeight: 50,
+                  minHeight: 50,
+                  maxHeight: 70,
                   child: Container(
                     color: Colors.pink,
                     child: const Center(
